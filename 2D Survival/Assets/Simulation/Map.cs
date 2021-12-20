@@ -20,7 +20,7 @@ namespace Survival_2D.Simulation
             {
                 for(int x = 0; x < Size.x; x++)
                 {
-                    Cells[x, y] = new Cell((TerrainType)Random.Range(0, 3));
+                    Cells[x, y] = new Cell(TerrainType.Grass);
                 }
             }
         }
