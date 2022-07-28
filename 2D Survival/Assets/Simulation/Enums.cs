@@ -17,4 +17,12 @@ namespace Survival_2D.Simulation
         Water,
         None
     }
+
+    public enum Direction
+    {
+        NORTH,
+        EAST,
+        SOUTH,
+        WEST
+    }
 }

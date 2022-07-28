@@ -12,6 +12,7 @@ namespace Survival_2D.Graphics
     public class TileManager : MonoBehaviour
     {
         public const string TerrainPath = "Terrain/";
+        public const string WallPath = "Walls/";
 
         #region SINGLETON
         public static TileManager Instance
@@ -26,6 +27,7 @@ namespace Survival_2D.Graphics
         #endregion
 
         public TerrainTile[] Terrain;
+        public WallTile ConcreteWall;
 
         private void Awake()
         {
@@ -40,6 +42,11 @@ namespace Survival_2D.Graphics
                 curr.sprite = spr;
                 Terrain[(int)terraintype] = curr;
             }
+
+            /* Generate a tile for concrete walls */
+            WallTileContainer wallTiles = Resources.Load<WallTileContainer>(WallPath + "ConcreteWall");
+            ConcreteWall = ScriptableObject.CreateInstance<WallTile>();
+            ConcreteWall.sprites = wallTiles;
             
         }
     }
